@@ -1,0 +1,18 @@
+version: 2
+root-markers:
+  - ".git/"
+log-file: "/Users/x/.config/efm-langserver/output.log"
+log-level: 1
+
+tools:
+  eruby-erb: &eruby-erb
+    # lint-command: 'erb -x -T - | ruby -c'
+    # lint-stdin: true
+    # lint-offset: 1
+    format-command: htmlbeautifier
+    format-stdin: true
+    lint-ignore-exit-code: true
+
+languages:
+  eruby:
+    - <<: *eruby-erb
